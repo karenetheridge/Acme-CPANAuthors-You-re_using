@@ -11,7 +11,7 @@ use Acme::CPANAuthors::Utils;
 
 =head1 NAME
 
-Acme::CPANAuthors::You::re_using - We are the CPAN authors that have written the modules installed for this perl.
+Acme::CPANAuthors::You::re_using - We are the CPAN authors that have written the modules installed on your perl!
 
 =head1 VERSION
 
@@ -33,7 +33,7 @@ BEGIN {
 
 =head1 DESCRIPTION
 
-This module builds an L<Acme::CPANAuthors> class by looking for all installed modules for the current C<perl> and then retrieving theirs authors' name and PAUSE id.
+This module builds an L<Acme::CPANAuthors> class by listing all the modules that are installed on the current C<perl> and then retrieving the name and the PAUSE id of their corresponding authors.
 
 It may take some time to load since it has to get CPAN indexes at C<BEGIN> time.
 
