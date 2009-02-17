@@ -1,7 +1,7 @@
 --- #YAML:1.0
 name:               Acme-CPANAuthors-You-re_using
-version:            0.01
-abstract:           We are the CPAN authors that have written the modules installed for this perl.
+version:            0.02
+abstract:           We are the CPAN authors that have written the modules installed on your perl!
 author:
     - Vincent Pit <perl@profvince.com>
 license:            perl

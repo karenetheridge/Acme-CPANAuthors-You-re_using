@@ -1,9 +1,9 @@
 NAME
     Acme::CPANAuthors::You::re_using - We are the CPAN authors that have
-    written the modules installed for this perl.
+    written the modules installed on your perl!
 
 VERSION
-    Version 0.01
+    Version 0.02
 
 SYNOPSIS
         use Acme::CPANAuthors;
@@ -12,12 +12,20 @@ SYNOPSIS
         print $authors->name($_) . " ($_)\n" for $authors->id;
 
 DESCRIPTION
-    This module builds an Acme::CPANAuthors class by looking for all
-    installed modules for the current "perl" and then retrieving theirs
-    authors' name and PAUSE id.
+    This module builds an Acme::CPANAuthors class by listing all the modules
+    that are installed on the current "perl" and then retrieving the name
+    and the PAUSE id of their corresponding authors.
 
-    It may take some time to load since it has to get CPAN indexes at
-    "BEGIN" time.
+    It may take some time to load since it has to search all the directory
+    trees given by your @INC for modules, but also to get and parse CPAN
+    indexes.
+
+FUNCTIONS
+  "register"
+    Fetches and registers the names into Acme::CPANAuthors::Register. This
+    function is automatically called when you "use" this module, unless you
+    have set the package variable $Acme::CPANAuthors::You're_using::SKIP to
+    true beforehand.
 
 DEPENDENCIES
     Carp, ExtUtils::Installed, Acme::CPANAuthors.
