@@ -39,7 +39,11 @@ It may take some time to load since it has to get CPAN indexes at C<BEGIN> time.
 
 =cut
 
+our $SKIP;
+
 BEGIN {
+ return if $SKIP;
+
  my %authors;
 
  my $pkgs = Acme::CPANAuthors::Utils::cpan_packages();
