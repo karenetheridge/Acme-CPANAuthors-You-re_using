@@ -35,7 +35,7 @@ BEGIN {
 
 This module builds an L<Acme::CPANAuthors> class by listing all the modules that are installed on the current C<perl> and then retrieving the name and the PAUSE id of their corresponding authors.
 
-It may take some time to load since it has to get CPAN indexes at C<BEGIN> time.
+It may take some time to load since it has to search all the directory trees given by your C<@INC> for modules, but also to get and parse CPAN indexes.
 
 =cut
 
