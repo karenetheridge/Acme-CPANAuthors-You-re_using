@@ -37,12 +37,19 @@ This module builds an L<Acme::CPANAuthors> class by listing all the modules that
 
 It may take some time to load since it has to search all the directory trees given by your C<@INC> for modules, but also to get and parse CPAN indexes.
 
+=head1 FUNCTIONS
+
+=head2 C<register>
+
+Fetches and registers the names into L<Acme::CPANAuthors::Register>.
+This function is automatically called when you C<use> this module, unless you have set the package variable C<$Acme::CPANAuthors::You're_using::SKIP> to true beforehand.
+
 =cut
 
-our $SKIP;
+BEGIN { require Acme::CPANAuthors::Register; }
 
-BEGIN {
- return if $SKIP;
+sub register {
+ return if shift;
 
  my %authors;
 
@@ -75,9 +82,12 @@ BEGIN {
   $authors{$cpanid} = defined $name ? $name : $cpanid;
  }
 
- require Acme::CPANAuthors::Register;
  Acme::CPANAuthors::Register->import(%authors);
 }
+
+our $SKIP;
+
+BEGIN { register($SKIP) }
 
 =head1 DEPENDENCIES
 
