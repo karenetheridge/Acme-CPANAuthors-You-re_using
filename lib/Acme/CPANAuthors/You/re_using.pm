@@ -48,10 +48,10 @@ BEGIN {
  my $auths = Acme::CPANAuthors::Utils::cpan_authors();
  croak 'Couldn\'t retrieve a valid Parse::CPAN::Authors object' unless $auths;
 
- my $installed = ExtUtils::Installed->new;
+ my $installed = ExtUtils::Installed->new(extra_libs => \@INC);
  croak 'Couldn\'t create a valid ExtUtils::Installed object' unless $installed;
 
- for ($installed->modules()) {
+ for ($installed->modules) {
   my $mod = $pkgs->package($_);
   next unless $mod;
 
