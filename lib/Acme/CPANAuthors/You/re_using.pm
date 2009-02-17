@@ -52,6 +52,8 @@ BEGIN {
  croak 'Couldn\'t create a valid ExtUtils::Installed object' unless $installed;
 
  for ($installed->modules) {
+  next unless defined and $_ ne 'Perl';
+
   my $mod = $pkgs->package($_);
   next unless $mod;
 
