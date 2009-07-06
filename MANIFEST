@@ -7,7 +7,6 @@ lib/Acme/CPANAuthors/You/re_using.pm
 samples/list_authors
 t/00-load.t
 t/10-base.t
-t/90-boilerplate.t
 t/91-pod.t
 t/92-pod-coverage.t       
 t/95-portability-files.t  
