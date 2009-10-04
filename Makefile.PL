@@ -4,6 +4,11 @@ use ExtUtils::MakeMaker;
 
 my $dist = 'Acme-CPANAuthors-You-re_using';
 
+(my $name = $dist) =~ s{-}{::}g;
+
+(my $file = $dist) =~ s{-}{/}g;
+$file = "lib/$file.pm";
+
 my %PREREQ_PM = (
  'Acme::CPANAuthors'   => 0,
  'Carp'                => 0,
@@ -30,17 +35,17 @@ my %META = (
 );
 
 WriteMakefile(
-    NAME             => 'Acme::CPANAuthors::You::re_using',
+    NAME             => $name,
     AUTHOR           => 'Vincent Pit <perl@profvince.com>',
     LICENSE          => 'perl',
-    VERSION_FROM     => 'lib/Acme/CPANAuthors/You/re_using.pm',
-    ABSTRACT_FROM    => 'lib/Acme/CPANAuthors/You/re_using.pm',
+    VERSION_FROM     => $file,
+    ABSTRACT_FROM    => $file,
     PL_FILES         => {},
     PREREQ_PM        => \%PREREQ_PM,
     MIN_PERL_VERSION => 5.006,
     META_MERGE       => \%META,
     dist             => {
-        PREOP    => 'pod2text lib/Acme/CPANAuthors/You/re_using.pm > $(DISTVNAME)/README',
+        PREOP    => "pod2text $file > \$(DISTVNAME)/README",
         COMPRESS => 'gzip -9f', SUFFIX => 'gz'
     },
     clean            => {
