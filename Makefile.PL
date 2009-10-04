@@ -4,6 +4,12 @@ use ExtUtils::MakeMaker;
 
 my $dist = 'Acme-CPANAuthors-You-re_using';
 
+my %PREREQ_PM = (
+ 'Acme::CPANAuthors'   => 0,
+ 'Carp'                => 0,
+ 'ExtUtils::Installed' => 0,
+);
+
 my %META = (
  configure_requires => {
   'ExtUtils::MakeMaker' => 0,
@@ -12,6 +18,7 @@ my %META = (
   'Acme::CPANAuthors'   => 0,
   'ExtUtils::MakeMaker' => 0,
   'Test::More'          => 0,
+  %PREREQ_PM,
  },
  dynamic_config => 0,
  resources => {
@@ -29,11 +36,7 @@ WriteMakefile(
     VERSION_FROM     => 'lib/Acme/CPANAuthors/You/re_using.pm',
     ABSTRACT_FROM    => 'lib/Acme/CPANAuthors/You/re_using.pm',
     PL_FILES         => {},
-    PREREQ_PM        => {
-        'Acme::CPANAuthors'   => 0,
-        'Carp'                => 0,
-        'ExtUtils::Installed' => 0,
-    },
+    PREREQ_PM        => \%PREREQ_PM,
     MIN_PERL_VERSION => 5.006,
     META_MERGE       => \%META,
     dist             => {
