@@ -59,7 +59,7 @@ sub register {
  my $auths = Acme::CPANAuthors::Utils::cpan_authors();
  croak 'Couldn\'t retrieve a valid Parse::CPAN::Authors object' unless $auths;
 
- my $installed = ExtUtils::Installed->new(extra_libs => \@INC);
+ my $installed = ExtUtils::Installed->new();
  croak 'Couldn\'t create a valid ExtUtils::Installed object' unless $installed;
 
  for ($installed->modules) {
