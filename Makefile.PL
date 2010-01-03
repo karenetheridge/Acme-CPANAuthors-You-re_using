@@ -10,7 +10,7 @@ my $dist = 'Acme-CPANAuthors-You-re_using';
 $file = "lib/$file.pm";
 
 my %PREREQ_PM = (
- 'Acme::CPANAuthors'   => 0,
+ 'Acme::CPANAuthors'   => '0.09',
  'Carp'                => 0,
  'ExtUtils::Installed' => '1.999',
 );
@@ -20,7 +20,6 @@ my %META = (
   'ExtUtils::MakeMaker' => 0,
  },
  build_requires => {
-  'Acme::CPANAuthors'   => 0,
   'ExtUtils::MakeMaker' => 0,
   'Test::More'          => 0,
   %PREREQ_PM,
