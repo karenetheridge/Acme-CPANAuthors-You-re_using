@@ -12,7 +12,7 @@ $file = "lib/$file.pm";
 my %PREREQ_PM = (
  'Acme::CPANAuthors'   => 0,
  'Carp'                => 0,
- 'ExtUtils::Installed' => 0,
+ 'ExtUtils::Installed' => '1.999',
 );
 
 my %META = (
