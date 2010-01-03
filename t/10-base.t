@@ -8,7 +8,13 @@ use Test::More;
 use Acme::CPANAuthors;
 
 my $authors = eval {
- local $SIG{__WARN__} = sub { die @_ };
+ local $SIG{__WARN__} = sub {
+  my ($msg) = @_;
+  if ($msg =~ /^You're_using CPAN Authors are not registered yet: (.*)/s) {
+   die $1;
+  }
+  CORE::warn(@_);
+ };
  Acme::CPANAuthors->new("You're_using");
 };
 
