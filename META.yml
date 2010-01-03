@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Acme-CPANAuthors-You-re_using
-version:            0.02
+version:            0.03
 abstract:           We are the CPAN authors that have written the modules installed on your perl!
 author:
     - Vincent Pit <perl@profvince.com>
@@ -9,24 +9,27 @@ distribution_type:  module
 configure_requires:
     ExtUtils::MakeMaker:  0
 build_requires:
-    Acme::CPANAuthors:    0
+    Acme::CPANAuthors:    0.09
+    Carp:                 0
+    ExtUtils::Installed:  1.999
     ExtUtils::MakeMaker:  0
     Test::More:           0
 requires:
-    Acme::CPANAuthors:    0
+    Acme::CPANAuthors:    0.09
     Carp:                 0
-    ExtUtils::Installed:  0
+    ExtUtils::Installed:  1.999
     perl:                 5.006
 resources:
     bugtracker:  http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Acme-CPANAuthors-You-re_using
     homepage:    http://search.cpan.org/dist/Acme-CPANAuthors-You-re_using/
     license:     http://dev.perl.org/licenses/
-    repository:  http://git.profvince.com/perl/modules/Acme-CPANAuthors-You-re_using.git
+    repository:  http://git.profvince.com/?p=perl%2Fmodules%2FAcme-CPANAuthors-You-re_using.git
 no_index:
     directory:
         - t
         - inc
-generated_by:       ExtUtils::MakeMaker version 6.48
+generated_by:       ExtUtils::MakeMaker version 6.56
 meta-spec:
     url:      http://module-build.sourceforge.net/META-spec-v1.4.html
     version:  1.4
+dynamic_config:     0

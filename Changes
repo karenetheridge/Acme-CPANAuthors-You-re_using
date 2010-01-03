@@ -1,3 +1,10 @@
+0.03    2010-01-03 10:10 UTC
+        + Fix : Stop skipping t/10-base.t when Acme::CPANAuthors throw an
+                unrelated warning.
+        + Fix : Explicitely depend on the last ExtUtils::Installed and
+                Acme::CPANAuthors.
+        + Fix : Work around Kwalitee test misfailures.
+
 0.02    2009-02-17 17:05 UTC
         + Doc : Misc. improvements.
         + Fix : Missing directory trees to search for installed modules.
