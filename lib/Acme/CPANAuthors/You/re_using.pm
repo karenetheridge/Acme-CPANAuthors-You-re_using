@@ -48,8 +48,10 @@ This function is automatically called when you C<use> this module, unless you ha
 
 BEGIN { require Acme::CPANAuthors::Register; }
 
+our $SKIP;
+
 sub register {
- return if shift;
+ return if $SKIP;
 
  my %authors;
 
@@ -85,9 +87,7 @@ sub register {
  Acme::CPANAuthors::Register->import(%authors);
 }
 
-our $SKIP;
-
-BEGIN { register($SKIP) }
+BEGIN { register() }
 
 =head1 DEPENDENCIES
 
