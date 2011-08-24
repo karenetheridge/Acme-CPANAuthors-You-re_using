@@ -3,8 +3,6 @@ package Acme::CPANAuthors::You::re_using;
 use strict;
 use warnings;
 
-use Carp qw/croak/;
-
 use File::Find ();
 use Module::Metadata;
 
@@ -57,10 +55,10 @@ sub register {
  my %authors;
 
  my $pkgs = Acme::CPANAuthors::Utils::cpan_packages();
- croak 'Couldn\'t retrieve a valid Parse::CPAN::Packages object' unless $pkgs;
+ die 'Couldn\'t retrieve a valid Parse::CPAN::Packages object' unless $pkgs;
 
  my $auths = Acme::CPANAuthors::Utils::cpan_authors();
- croak 'Couldn\'t retrieve a valid Parse::CPAN::Authors object' unless $auths;
+ die 'Couldn\'t retrieve a valid Parse::CPAN::Authors object' unless $auths;
 
  my %modules;
 
@@ -100,7 +98,7 @@ BEGIN { register() }
 
 =head1 DEPENDENCIES
 
-L<Carp>, L<File::Find>, L<Module::Metadata>, L<Acme::CPANAuthors>.
+L<File::Find>, L<Module::Metadata>, L<Acme::CPANAuthors>.
 
 =head1 SEE ALSO
 
