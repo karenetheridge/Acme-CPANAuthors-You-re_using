@@ -10,7 +10,7 @@ my $dist = 'Acme-CPANAuthors-You-re_using';
 $file = "lib/$file.pm";
 
 my %PREREQ_PM = (
- 'Acme::CPANAuthors'   => '0.14',
+ 'Acme::CPANAuthors'   => '0.16',
  'Carp'                => 0,
  'ExtUtils::Installed' => '1.999',
 );
