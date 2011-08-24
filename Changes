@@ -1,3 +1,15 @@
+Revision history for Acme-CPANAuthors-You-re_using
+
+0.04    2011-08-24 23:10 UTC
+        + Chg : The module now uses File::Find and Module::Metadata to collect
+                all the modules installed in your system.
+                ExtUtils::Installed is no longer needed.
+        + Chg : die() is called instead of croak() for internal errors.
+                Carp is no longer needed.
+        + Fix : Update the Parse::CPAN::Packages' author id test, since
+                Acme::CPANAuthors does not depend on it anymore.
+        + Upd : Acme::CPANAuthors dependency bumped to 0.16.
+
 0.03    2010-01-03 10:10 UTC
         + Fix : Stop skipping t/10-base.t when Acme::CPANAuthors throw an
                 unrelated warning.

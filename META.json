@@ -22,10 +22,10 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Acme::CPANAuthors" : "0.14",
-            "Carp" : 0,
-            "ExtUtils::Installed" : "1.999",
+            "Acme::CPANAuthors" : "0.16",
             "ExtUtils::MakeMaker" : 0,
+            "File::Find" : 0,
+            "Module::Metadata" : "1.000005",
             "Test::More" : 0
          }
       },
@@ -36,9 +36,9 @@
       },
       "runtime" : {
          "requires" : {
-            "Acme::CPANAuthors" : "0.14",
-            "Carp" : 0,
-            "ExtUtils::Installed" : "1.999",
+            "Acme::CPANAuthors" : "0.16",
+            "File::Find" : 0,
+            "Module::Metadata" : "1.000005",
             "perl" : "5.006"
          }
       }
@@ -56,5 +56,5 @@
          "url" : "http://git.profvince.com/?p=perl%2Fmodules%2FAcme-CPANAuthors-You-re_using.git"
       }
    },
-   "version" : "0.03"
+   "version" : "0.04"
 }
