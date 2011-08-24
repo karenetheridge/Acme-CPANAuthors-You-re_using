@@ -24,6 +24,9 @@ if ($authors) {
  plan skip_all => $@;
 }
 
+diag 'Directories in @INC :';
+diag "  $_" for @INC;
+
 my $count = $authors->count;
 diag "$count authors found";
 cmp_ok $count, '>', 0, 'there are some authors';
