@@ -10,9 +10,10 @@ my $dist = 'Acme-CPANAuthors-You-re_using';
 $file = "lib/$file.pm";
 
 my %PREREQ_PM = (
- 'Acme::CPANAuthors'   => '0.16',
- 'Carp'                => 0,
- 'ExtUtils::Installed' => '1.999',
+ 'Acme::CPANAuthors' => '0.16',
+ 'Carp'              => 0,
+ 'File::Find'        => 0,
+ 'Module::Metadata'  => '1.000005',
 );
 
 my %META = (

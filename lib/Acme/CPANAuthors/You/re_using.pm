@@ -5,7 +5,8 @@ use warnings;
 
 use Carp qw/croak/;
 
-use ExtUtils::Installed;
+use File::Find ();
+use Module::Metadata;
 
 use Acme::CPANAuthors::Utils;
 
@@ -61,12 +62,20 @@ sub register {
  my $auths = Acme::CPANAuthors::Utils::cpan_authors();
  croak 'Couldn\'t retrieve a valid Parse::CPAN::Authors object' unless $auths;
 
- my $installed = ExtUtils::Installed->new();
- croak 'Couldn\'t create a valid ExtUtils::Installed object' unless $installed;
+ my %modules;
 
- for ($installed->modules) {
-  next unless defined and $_ ne 'Perl';
+ File::Find::find({
+  wanted => sub {
+   return unless /\.pm$/;
+   my $mod = Module::Metadata->new_from_file($_);
+   return unless $mod;
+   @modules{grep $_, $mod->packages_inside} = ();
+  },
+  follow   => 0,
+  no_chdir => 1,
+ }, @INC);
 
+ for (keys %modules) {
   my $mod = $pkgs->package($_);
   next unless $mod;
 
@@ -91,7 +100,7 @@ BEGIN { register() }
 
 =head1 DEPENDENCIES
 
-L<Carp>, L<ExtUtils::Installed>, L<Acme::CPANAuthors>.
+L<Carp>, L<File::Find>, L<Module::Metadata>, L<Acme::CPANAuthors>.
 
 =head1 SEE ALSO
 
