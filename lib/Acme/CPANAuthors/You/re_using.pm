@@ -87,7 +87,7 @@ sub register {
 
   my $name;
   $name = $auth->name if defined $auth;
- 
+
   $authors{$cpanid} = defined $name ? $name : $cpanid;
  }
 
