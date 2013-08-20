@@ -4,7 +4,7 @@
       "Vincent Pit <perl@profvince.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "ExtUtils::MakeMaker version 6.59, CPAN::Meta::Converter version 2.112150",
+   "generated_by" : "ExtUtils::MakeMaker version 6.72, CPAN::Meta::Converter version 2.132140",
    "license" : [
       "perl_5"
    ],
@@ -23,21 +23,21 @@
       "build" : {
          "requires" : {
             "Acme::CPANAuthors" : "0.16",
-            "ExtUtils::MakeMaker" : 0,
-            "File::Find" : 0,
+            "ExtUtils::MakeMaker" : "0",
+            "File::Find" : "0",
             "Module::Metadata" : "1.000005",
-            "Test::More" : 0
+            "Test::More" : "0"
          }
       },
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : 0
+            "ExtUtils::MakeMaker" : "0"
          }
       },
       "runtime" : {
          "requires" : {
             "Acme::CPANAuthors" : "0.16",
-            "File::Find" : 0,
+            "File::Find" : "0",
             "Module::Metadata" : "1.000005",
             "perl" : "5.006"
          }
@@ -46,7 +46,7 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Acme-CPANAuthors-You-re_using"
+         "web" : "http://rt.cpan.org/Dist/Display.html?Name=Acme-CPANAuthors-You-re_using"
       },
       "homepage" : "http://search.cpan.org/dist/Acme-CPANAuthors-You-re_using/",
       "license" : [
@@ -56,5 +56,5 @@
          "url" : "http://git.profvince.com/?p=perl%2Fmodules%2FAcme-CPANAuthors-You-re_using.git"
       }
    },
-   "version" : "0.04"
+   "version" : "0.05"
 }
