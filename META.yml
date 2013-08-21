@@ -31,4 +31,4 @@ resources:
   homepage: http://search.cpan.org/dist/Acme-CPANAuthors-You-re_using/
   license: http://dev.perl.org/licenses/
   repository: http://git.profvince.com/?p=perl%2Fmodules%2FAcme-CPANAuthors-You-re_using.git
-version: 0.05
+version: 0.06
