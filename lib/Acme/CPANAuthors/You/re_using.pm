@@ -65,7 +65,10 @@ sub register {
  File::Find::find({
   wanted => sub {
    return unless /\.pm$/;
-   my $mod = Module::Metadata->new_from_file($_);
+   my $mod = do {
+    local $@;
+    eval { Module::Metadata->new_from_file($_) }
+   };
    return unless $mod;
    @modules{grep $_, $mod->packages_inside} = ();
   },
