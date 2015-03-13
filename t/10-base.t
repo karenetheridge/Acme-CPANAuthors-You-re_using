@@ -7,6 +7,8 @@ use Test::More;
 
 use Acme::CPANAuthors;
 
+local @INC = grep $_ ne '.', @INC;
+
 my $authors = eval {
  local $SIG{__WARN__} = sub {
   my ($msg) = @_;
