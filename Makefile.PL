@@ -15,14 +15,19 @@ my %PREREQ_PM = (
  'Module::Metadata'  => '1.000005',
 );
 
+my %BUILD_REQUIRES = (
+  'ExtUtils::MakeMaker' => 0,
+  'Test::More'          => 0,
+  'lib'                 => 0,
+  %PREREQ_PM,
+);
+
 my %META = (
  configure_requires => {
   'ExtUtils::MakeMaker' => 0,
  },
  build_requires => {
-  'ExtUtils::MakeMaker' => 0,
-  'Test::More'          => 0,
-  %PREREQ_PM,
+  %BUILD_REQUIRES,
  },
  dynamic_config => 0,
  resources => {
@@ -40,6 +45,7 @@ WriteMakefile(
  VERSION_FROM     => $file,
  ABSTRACT_FROM    => $file,
  PL_FILES         => {},
+ BUILD_REQUIRES   => \%BUILD_REQUIRES,
  PREREQ_PM        => \%PREREQ_PM,
  MIN_PERL_VERSION => '5.006',
  META_MERGE       => \%META,
