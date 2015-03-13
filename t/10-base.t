@@ -18,7 +18,7 @@ my $authors = eval {
   if ($msg =~ /^You're_using CPAN Authors are not registered yet: (.*)/s) {
    die $1;
   }
-  CORE::warn(@_);
+  diag $_ for @_;
  };
  Acme::CPANAuthors->new("You're_using");
 };
