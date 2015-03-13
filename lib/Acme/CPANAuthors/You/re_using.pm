@@ -125,7 +125,7 @@ You can find documentation for this module with the perldoc command.
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2009,2010,2011,2013 Vincent Pit, all rights reserved.
+Copyright 2009,2010,2011,2013,2015 Vincent Pit, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
