@@ -9,6 +9,9 @@ use Acme::CPANAuthors;
 
 local @INC = grep $_ ne '.', @INC;
 
+diag 'Directories in @INC :';
+diag "  $_" for @INC;
+
 my $authors = eval {
  local $SIG{__WARN__} = sub {
   my ($msg) = @_;
@@ -25,9 +28,6 @@ if ($authors) {
 } else {
  plan skip_all => $@;
 }
-
-diag 'Directories in @INC :';
-diag "  $_" for @INC;
 
 my $count = $authors->count;
 diag "$count authors found";
