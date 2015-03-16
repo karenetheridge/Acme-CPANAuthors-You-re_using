@@ -14,13 +14,13 @@ Acme::CPANAuthors::You::re_using - We are the CPAN authors that have written the
 
 =head1 VERSION
 
-Version 0.07
+Version 0.08
 
 =cut
 
 our $VERSION;
 BEGIN {
- $VERSION = '0.07';
+ $VERSION = '0.08';
 }
 
 =head1 SYNOPSIS
