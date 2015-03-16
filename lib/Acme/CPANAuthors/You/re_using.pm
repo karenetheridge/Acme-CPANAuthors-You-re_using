@@ -101,7 +101,11 @@ BEGIN { register() }
 
 =head1 DEPENDENCIES
 
-L<File::Find>, L<Module::Metadata>, L<Acme::CPANAuthors>.
+L<File::Find> (core since perl 5)
+
+L<Acme::CPANAuthors> 0.16.
+
+L<Module::Metadata> 1.000_017.
 
 =head1 SEE ALSO
 
