@@ -12,7 +12,7 @@ $file = "lib/$file.pm";
 my %PREREQ_PM = (
  'Acme::CPANAuthors' => '0.16',
  'File::Find'        => 0,
- 'Module::Metadata'  => '1.000005',
+ 'Module::Metadata'  => '1.000017',
 );
 
 my %BUILD_REQUIRES = (
